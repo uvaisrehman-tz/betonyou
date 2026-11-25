@@ -54,7 +54,7 @@ a:hover{color:#5A2FD0}
 
 
 <header style="position:sticky;top:0;z-index:90;width:100%;padding:{{ hdrPad }};transition:padding .5s cubic-bezier(.22,1,.36,1)"><div style="width:100%;max-width:{{ hdrMax }};margin:0 auto;padding:{{ hdrInner }};position:relative;border-radius:{{ hdrRad }};background:{{ hdrBg }};-webkit-backdrop-filter:{{ hdrBlur }};backdrop-filter:{{ hdrBlur }};box-shadow:{{ hdrSh }};display:flex;align-items:center;justify-content:space-between;gap:24px;transition:max-width .6s cubic-bezier(.22,1,.36,1),padding .6s cubic-bezier(.22,1,.36,1),border-radius .6s cubic-bezier(.22,1,.36,1),background .5s ease,box-shadow .5s ease">
-  <a href="BetOnYou Landing V2.dc.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
+  <a href="index.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
     <span style="width:36px;height:36px;border-radius:10px;background:#7B45F5;display:flex;align-items:center;justify-content:center"><img src="boy-logo-mrey8juw.svg" alt="" style="width:22px;height:28px;display:block"></span>
     <span style="font-weight:600;font-size:24px;letter-spacing:-.045em;color:#25103F">BetOnYou</span>
   </a>
@@ -73,11 +73,11 @@ a:hover{color:#5A2FD0}
 
 <sc-if value="{{ mobOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;z-index:89;left:16px;right:16px;top:96px;max-height:calc(100dvh - 112px);overflow-y:auto;overscroll-behavior:contain;margin:0;background:#fff;border-radius:22px;box-shadow:0 0 0 1px #E6DEF4,0 24px 48px rgba(42,18,80,.1);padding:12px 20px 20px;display:flex;flex-direction:column">
-    <a href="BetOnYou About V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#7B45F5;border-bottom:1px solid #E6DEF4">About</a>
-    <a href="BetOnYou AI Coach V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
-    <a href="BetOnYou How It Works V2 Stage.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">How It Works</a>
-    <a href="BetOnYou Learn V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
-    <a href="BetOnYou Contact V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
+    <a href="about.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#7B45F5;border-bottom:1px solid #E6DEF4">About</a>
+    <a href="ai-coach.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
+    <a href="how-it-works.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">How It Works</a>
+    <a href="learn.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
+    <a href="contact.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
   </div>
 </sc-if>
 
@@ -247,7 +247,7 @@ class Component extends DCLogic {
   componentWillUnmount() { clearInterval(this._wallI); window.removeEventListener('scroll', this._s); window.removeEventListener('resize', this._r); window.removeEventListener('keydown', this._k); }
   renderVals() {
     const s = this.state.hdrS, small = this.state.w < (s ? 1180 : 1100);
-    const NAV = [['About', 'BetOnYou About V2.dc.html'], ['AI Coach', 'BetOnYou AI Coach V2.dc.html'], ['How It Works', 'BetOnYou How It Works V2 Stage.dc.html'], ['Learn', 'BetOnYou Learn V2.dc.html'], ['Contact', 'BetOnYou Contact V2.dc.html']];
+    const NAV = [['About', 'about.html'], ['AI Coach', 'ai-coach.html'], ['How It Works', 'how-it-works.html'], ['Learn', 'learn.html'], ['Contact', 'contact.html']];
     const w = this.state.w, hv = this.state.lvHov, R = this.reduced, wide = w >= 1000, hov = (k) => ({ on: () => this.setState({ lvHov: k }), off: () => this.setState(st => st.lvHov === k ? { lvHov: '' } : null) }), Z = (k) => (hv === k && !R ? '1.05' : '1'), FG = (k) => (hv === k ? '#7B45F5' : '#25103F');
     const lv = {
       featCols: w >= 900 ? 'minmax(0,1.15fr) minmax(0,1fr)' : 'minmax(0,1fr)', featZ: Z('feat'), featX: hv === 'feat' ? '6px' : '0px', featOn: () => this.setState({ lvHov: 'feat' }), featOff: () => this.setState({ lvHov: '' }),
@@ -255,25 +255,25 @@ class Component extends DCLogic {
       cats: LV_CATS.map(([label, id], i) => { const on = this.state.catAct === i; return { label, href: '#' + id, cur: on ? 'true' : 'false', bg: on ? '#25103F' : 'transparent', fg: on ? '#fff' : '#3A2B55', go: (e) => { const el = document.getElementById(id); if (!el) return; e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 140, behavior: R ? 'auto' : 'smooth' }); } }; }),
       rowFlow: wide ? 'row' : 'column', rowAuto: wide ? 'auto' : 'min(300px,78vw)', rowOx: wide ? 'visible' : 'auto',
       ...(() => { const AA = this.state.arts || {}, info = (s) => AA[s] || {}, meta = (s, min) => { const x = info(s); return (x.by ? x.by[0] + ' · ' : '') + (x.date || '') + (x.date ? ' · ' : '') + (min || x.min || '') + ' read'; };
-        const toItem = (k, title, tag, min, img, s) => ({ title, tag, min, img: lvImg(img), lead: info(s).lead || '', meta: meta(s, min), href: 'BetOnYou Article V2.dc.html?a=' + s, z: Z(k), fg: FG(k), x: hv === k && !R ? '6px' : '0px', ...hov(k) });
+        const toItem = (k, title, tag, min, img, s) => ({ title, tag, min, img: lvImg(img), lead: info(s).lead || '', meta: meta(s, min), href: 'article.html?a=' + s, z: Z(k), fg: FG(k), x: hv === k && !R ? '6px' : '0px', ...hov(k) });
         const latest = Object.keys(AA).filter(s => !AA[s].sample).sort((p, q) => new Date(AA[q].date) - new Date(AA[p].date)).slice(0, 5).map((s, i) => { const x = AA[s]; return toItem('lt' + i, x.title, x.tag, x.min, x.img, s); });
         return { latest, groups: LV_GROUPS.map((g, gi) => { const it = g.items.map(([title, tag, min, img], i) => toItem('g' + gi + '-' + i, title, tag, min, img, LV_SLUG[title])); return { ...g, count: g.items.length + ' articles', lead: it[0], rest: it.slice(1) }; }) }; })(),
       leadCols: w >= 1000 ? 'minmax(0,1.3fr) minmax(0,1fr)' : 'minmax(0,1fr)', featFg: FG('feat'),
       goNews: (e) => { const el = document.getElementById('lv-news-box'); if (!el) return; e && e.preventDefault && e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: R ? 'auto' : 'smooth' }); },
       goAll: (e) => { const el = document.getElementById('lv-start'); if (!el) return; e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 140, behavior: R ? 'auto' : 'smooth' }); },
-      groupsOld: LV_GROUPS.map((g, gi) => ({ ...g, cols: wide ? 'repeat(' + Math.max(g.items.length, 3) + ',minmax(0,1fr))' : 'none', items: g.items.map(([title, tag, min, img], i) => { const k = 'g' + gi + '-' + i; return { title, tag, min, img: lvImg(img), href: 'BetOnYou Article V2.dc.html?a=' + LV_SLUG[title], z: Z(k), fg: FG(k), ...hov(k) }; }) })),
+      groupsOld: LV_GROUPS.map((g, gi) => ({ ...g, cols: wide ? 'repeat(' + Math.max(g.items.length, 3) + ',minmax(0,1fr))' : 'none', items: g.items.map(([title, tag, min, img], i) => { const k = 'g' + gi + '-' + i; return { title, tag, min, img: lvImg(img), href: 'article.html?a=' + LV_SLUG[title], z: Z(k), fg: FG(k), ...hov(k) }; }) })),
       storyCols: wide ? 'repeat(3,minmax(0,1fr))' : 'none',
-      stories: LV_STORIES.map(([title, text, img], i) => { const k = 's' + i; return { href: 'BetOnYou Article V2.dc.html?a=' + ['quit-smoking','novel-90-days','saved-6000'][i], title, text, img: lvImg(img, 900), z: Z(k), y: hv === k && !R ? '-4px' : '0px', ...hov(k) }; }),
-      research: LV_RESEARCH.map(([title, text], i) => { const k = 'r' + i, on = hv === k; return { href: 'BetOnYou Article V2.dc.html?a=' + ['loss-aversion','procrastination','identity-habits','public-commitment','tiny-wins'][i], n: '0' + (i + 1), title, text, fg: on ? '#7B45F5' : '#25103F', x: on && !R ? '8px' : '0px', bg: on ? '#7B45F5' : '#F3EFFA', ic: on ? '#fff' : '#7B45F5', ...hov(k) }; }),
+      stories: LV_STORIES.map(([title, text, img], i) => { const k = 's' + i; return { href: 'article.html?a=' + ['quit-smoking','novel-90-days','saved-6000'][i], title, text, img: lvImg(img, 900), z: Z(k), y: hv === k && !R ? '-4px' : '0px', ...hov(k) }; }),
+      research: LV_RESEARCH.map(([title, text], i) => { const k = 'r' + i, on = hv === k; return { href: 'article.html?a=' + ['loss-aversion','procrastination','identity-habits','public-commitment','tiny-wins'][i], n: '0' + (i + 1), title, text, fg: on ? '#7B45F5' : '#25103F', x: on && !R ? '8px' : '0px', bg: on ? '#7B45F5' : '#F3EFFA', ic: on ? '#fff' : '#7B45F5', ...hov(k) }; }),
       pickZ: Z('pick'), pickFg: FG('pick'), pickOn: () => this.setState({ lvHov: 'pick' }), pickOff: () => this.setState({ lvHov: '' }),
-      picks: LV_PICKS.map(([tag, title, img], i) => { const k = 'p' + i; return { href: 'BetOnYou Article V2.dc.html?a=' + LV_SLUG[title], tag, title, img: lvImg(img, 300), z: Z(k), fg: FG(k), ...hov(k) }; }),
+      picks: LV_PICKS.map(([tag, title, img], i) => { const k = 'p' + i; return { href: 'article.html?a=' + LV_SLUG[title], tag, title, img: lvImg(img, 300), z: Z(k), fg: FG(k), ...hov(k) }; }),
       newsDone: this.state.news, newsForm: !this.state.news, newsSubmit: (e) => { e.preventDefault(); this.setState({ news: true }); },
       faqs: LV_FAQ.map(([q], i) => { const on = i === this.state.faqIdx; return { q, tid: 'lv-faq-' + i, sel: on ? 'true' : 'false', bg: on ? 'rgba(255,255,255,.1)' : 'transparent', fg: on ? '#fff' : '#D9CFF0', go: () => this.setState({ faqIdx: i }) }; }),
       faqKey: 'a' + this.state.faqIdx, faqQ: LV_FAQ[this.state.faqIdx][0], faqA: LV_FAQ[this.state.faqIdx][1]
     };
     const nv = (() => { const AA = this.state.arts || {}, ED = ['BetOnYou Editorial', '', ''];
       const DOT = { Habits: '#3BBF8F', Accountability: '#F25F3A', Mindset: '#F8B733', Productivity: '#2FA8E0', 'Behavior Science': '#7B45F5', Fitness: '#E0457B', 'Sample story': '#25103F', 'Success Stories': '#25103F' };
-      const mk = (k, s, fb) => { const x = AA[s] || fb || {}; const by = x.by || ED; return { tag: x.tag || 'Behavior Science', min: x.min || '9 min', dot: DOT[x.tag || 'Behavior Science'] || '#7B45F5', title: x.title || '', lead: x.lead || '', img: lvImg(x.img || 'photo-1455390582262-044cdead277a'), href: 'BetOnYou Article V2.dc.html' + (s ? '?a=' + s : ''), author: by[0], date: x.date || '', av: by[2] || 'assets/Logomark.svg', avU: 'url("' + (by[2] || 'assets/Logomark.svg') + '")', avBg: by[2] ? '#F6F2FE' : '#25103F', avW: by[2] ? '100%' : '12px', avF: by[2] ? 'none' : 'brightness(0) invert(1)', z: hv === k && !R ? '1.03' : '1', ud: 'none', ul: hv === k ? '100%' : '0%', ...hov(k) }; };
+      const mk = (k, s, fb) => { const x = AA[s] || fb || {}; const by = x.by || ED; return { tag: x.tag || 'Behavior Science', min: x.min || '9 min', dot: DOT[x.tag || 'Behavior Science'] || '#7B45F5', title: x.title || '', lead: x.lead || '', img: lvImg(x.img || 'photo-1455390582262-044cdead277a'), href: 'article.html' + (s ? '?a=' + s : ''), author: by[0], date: x.date || '', av: by[2] || 'assets/Logomark.svg', avU: 'url("' + (by[2] || 'assets/Logomark.svg') + '")', avBg: by[2] ? '#F6F2FE' : '#25103F', avW: by[2] ? '100%' : '12px', avF: by[2] ? 'none' : 'brightness(0) invert(1)', z: hv === k && !R ? '1.03' : '1', ud: 'none', ul: hv === k ? '100%' : '0%', ...hov(k) }; };
       const WILL = { title: 'Why willpower fails — and what actually makes behavior stick', lead: '', img: 'photo-1455390582262-044cdead277a', date: 'Jul 14, 2026', by: ['Thomas Reed', '', 'assets/boy/av-thomas.webp'] };
       const latest = Object.keys(AA).filter(s => !AA[s].sample).sort((p, q) => new Date(AA[q].date) - new Date(AA[p].date)).slice(0, 5).map((s, i) => mk('lt' + i, s));
       const SUB = { 'lv-start': 'Essential reading for new members.', 'lv-science': 'The psychology behind lasting change.', 'lv-habits': 'Small actions, meaningful results.', 'lv-accountability': 'Why external commitment works.' };
@@ -282,7 +282,7 @@ class Component extends DCLogic {
       gs.splice(1, 0, { id: 'lv-community', label: 'Community', title: 'Community stories', sub: 'Real people. Real challenges. Real outcomes.', count: 'Sample stories', bg: '#FFFFFF', isRow: true, isSplit: false, cols: wide ? 'repeat(3,minmax(0,1fr))' : 'none', items: ['quit-smoking', 'novel-90-days', 'saved-6000'].map((s, i) => mk('cs' + i, s)), leadL: [], rest: [] });
       gs.forEach((g, i) => { g.bg = i % 2 ? '#F6F2FE' : '#FFFFFF'; });
       return { nFeat: [mk('feat', '', WILL)], latest, nGroups: gs, resCols: w >= 900 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)', resCols5: wide ? 'repeat(5,minmax(0,1fr))' : 'none', newsPh: this.state.news ? "You're subscribed" : 'Your email',
-        research: LV_RESEARCH.map(([title, text], i) => { const k = 'r' + i; return { n: '0' + (i + 1), title, text, href: 'BetOnYou Article V2.dc.html?a=' + ['loss-aversion','procrastination','identity-habits','public-commitment','tiny-wins'][i], ud: 'none', ul: hv === k ? '100%' : '0%', bg: hv === k ? '#F6F2FE' : '#F6F2FE', nc: hv === k ? '#25103F' : '#B7B2BE', ...hov(k) }; }) }; })();
+        research: LV_RESEARCH.map(([title, text], i) => { const k = 'r' + i; return { n: '0' + (i + 1), title, text, href: 'article.html?a=' + ['loss-aversion','procrastination','identity-habits','public-commitment','tiny-wins'][i], ud: 'none', ul: hv === k ? '100%' : '0%', bg: hv === k ? '#F6F2FE' : '#F6F2FE', nc: hv === k ? '#25103F' : '#B7B2BE', ...hov(k) }; }) }; })();
     return {
       ...lv, ...nv,
       hdrPad: s ? '12px clamp(12px,3vw,40px) 0' : '0', hdrMax: s ? '1180px' : '1560px', hdrInner: s ? '10px 12px 10px 22px' : '16px clamp(20px,5vw,80px)', hdrRad: s ? '22px' : '0px',

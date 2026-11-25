@@ -118,7 +118,7 @@ a:hover{color:#6633E0}
 
 
 <header style="position:sticky;top:0;z-index:90;width:100%;padding:{{ hdrPad }};transition:padding .5s cubic-bezier(.22,1,.36,1)"><div style="width:100%;max-width:{{ hdrMax }};margin:0 auto;padding:{{ hdrInner }};position:relative;border-radius:{{ hdrRad }};background:{{ hdrBg }};-webkit-backdrop-filter:{{ hdrBlur }};backdrop-filter:{{ hdrBlur }};box-shadow:{{ hdrSh }};display:flex;align-items:center;justify-content:space-between;gap:24px;transition:max-width .6s cubic-bezier(.22,1,.36,1),padding .6s cubic-bezier(.22,1,.36,1),border-radius .6s cubic-bezier(.22,1,.36,1),background .5s ease,box-shadow .5s ease">
-  <a href="BetOnYou Landing V2.dc.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
+  <a href="index.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
     <span style="width:36px;height:36px;border-radius:10px;background:#7B45F5;display:flex;align-items:center;justify-content:center"><img src="boy-logo-mrey8juw.svg" alt="" style="width:22px;height:28px;display:block"></span>
     <span style="font-weight:600;font-size:24px;letter-spacing:-.045em;color:#25103F">BetOnYou</span>
   </a>
@@ -131,7 +131,7 @@ a:hover{color:#6633E0}
     </nav>
     <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:auto">
       <dc-import name="RollButton" label="Log in" href="#" size="sm" tone="outline" hint-size="96px,44px"></dc-import>
-      <dc-import name="RollButton" label="Start a challenge" href="BetOnYou Landing V2.dc.html" size="sm" hint-size="170px,44px"></dc-import>
+      <dc-import name="RollButton" label="Start a challenge" href="index.html" size="sm" hint-size="170px,44px"></dc-import>
     </div>
   </sc-if>
 
@@ -144,14 +144,14 @@ a:hover{color:#6633E0}
 
 <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
   <div id="v2-mobile-menu" style="position:fixed;z-index:89;left:16px;right:16px;top:96px;max-height:calc(100dvh - 112px);overflow-y:auto;overscroll-behavior:contain;margin:0;background:#fff;border-radius:22px;box-shadow:0 0 0 1px #E6DEF4,0 24px 48px rgba(42,18,80,.1);padding:12px 20px 20px;display:flex;flex-direction:column">
-    <a href="BetOnYou About V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">About</a>
-    <a href="BetOnYou AI Coach V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
-    <a href="BetOnYou How It Works V2 Stage.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">How It Works</a>
-    <a href="BetOnYou Learn V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
-    <a href="BetOnYou Contact V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
+    <a href="about.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">About</a>
+    <a href="ai-coach.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
+    <a href="how-it-works.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">How It Works</a>
+    <a href="learn.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
+    <a href="contact.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
     <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
       <dc-import name="RollButton" label="Log in" href="#" tone="outline" full="{{ true }}" hint-size="100%,52px"></dc-import>
-      <dc-import name="RollButton" label="Start a challenge" href="BetOnYou Landing V2.dc.html" full="{{ true }}" hint-size="100%,52px"></dc-import>
+      <dc-import name="RollButton" label="Start a challenge" href="index.html" full="{{ true }}" hint-size="100%,52px"></dc-import>
     </div>
   </div>
 </sc-if>
@@ -555,7 +555,7 @@ a:hover{color:#6633E0}
       <p style="margin:clamp(18px,2.6vh,26px) 0 0;max-width:520px;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#D9CFF0;text-wrap:pretty">Thousands of people are backing their goals, showing up every day, and proving what's possible — together.</p>
       <div style="margin-top:clamp(28px,4.5vh,40px);display:flex;flex-wrap:wrap;gap:12px">
         <dc-import name="RollButton" label="Get the app" href="#get-app" size="lg" on-click="{{ openApp }}" hint-size="190px,60px"></dc-import>
-        <dc-import name="RollButton" label="How it works" href="BetOnYou How It Works V2 Stage.dc.html" size="lg" tone="light" hint-size="200px,60px"></dc-import>
+        <dc-import name="RollButton" label="How it works" href="how-it-works.html" size="lg" tone="light" hint-size="200px,60px"></dc-import>
       </div>
       <div style="margin-top:clamp(28px,4.5vh,40px);display:flex;align-items:center;gap:14px">
         <div style="display:flex">
@@ -687,7 +687,7 @@ a:hover{color:#6633E0}
             </div>
           </sc-for>
         </div>
-        <div style="align-self:flex-start;margin-top:4px"><dc-import name="RollButton" label="Start a challenge like this" href="BetOnYou Landing V2.dc.html" hint-size="260px,52px"></dc-import></div>
+        <div style="align-self:flex-start;margin-top:4px"><dc-import name="RollButton" label="Start a challenge like this" href="index.html" hint-size="260px,52px"></dc-import></div>
       </div>
     </div>
   </div>
@@ -776,10 +776,10 @@ const FEAT = [
   { img: 'assets/app/complete.webp', alt: 'BetOnYou challenge complete screen showing your reward', eyebrow: 'Work toward completion', title: 'Keep your promise. Earn your win.', body: 'Finish your challenge and celebrate your progress. Your result, your reward and the believers who backed you are all in one place.' }
 ];
 const PRODUCT = [
-  { label: 'AI Coach', desc: 'Plan a challenge and stay on track.', href: 'BetOnYou AI Coach V2.dc.html' },
-  { label: 'Challenges', desc: 'Set a goal with a clear finish line.', href: 'BetOnYou How It Works V2 Stage.dc.html' },
-  { label: 'Progress & Proof', desc: 'Log check-ins your believers can see.', href: 'BetOnYou How It Works V2 Stage.dc.html' },
-  { label: 'Believers & Community', desc: 'Invite the people backing you.', href: 'BetOnYou About V2.dc.html' }
+  { label: 'AI Coach', desc: 'Plan a challenge and stay on track.', href: 'ai-coach.html' },
+  { label: 'Challenges', desc: 'Set a goal with a clear finish line.', href: 'how-it-works.html' },
+  { label: 'Progress & Proof', desc: 'Log check-ins your believers can see.', href: 'how-it-works.html' },
+  { label: 'Believers & Community', desc: 'Invite the people backing you.', href: 'about.html' }
 ];
 
 class Component extends DCLogic {
@@ -1490,7 +1490,7 @@ class Component extends DCLogic {
       ...(() => { const s = !!this.state.hdrS; return { hdrNavDisp: (this.state.w || 1400) < (s ? 1180 : 1100) ? 'none' : 'flex', hdrPad: s ? '12px clamp(12px,3vw,40px) 0' : '0', hdrMax: s ? '1180px' : '1560px', hdrInner: s ? '10px 12px 10px 22px' : '16px clamp(20px,5vw,80px)', hdrRad: s ? '22px' : '0px', hdrBg: s ? 'linear-gradient(180deg,rgba(255,255,255,.62),rgba(246,242,254,.48))' : 'rgba(255,255,255,0)', hdrBlur: s ? 'blur(22px) saturate(1.8)' : 'blur(0px)', hdrSh: s ? 'inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.55),0 0 0 1px rgba(123,69,245,.10),0 14px 34px -16px rgba(42,18,80,.28)' : 'none' }; })(),
       badgeH: (this.state.w || 1400) < 700 ? 520 : 480,
       askScrollRef: this.askScrollRef, s03Ref: this.s03Ref, streakRef: this.streakRef, streakPlay: 'running', ...(() => { const t = this.reduced ? 30 : (this.state.finT ?? 0); return { finTxt: t + '/30', finOff: (251.3 * (1 - t / 30)).toFixed(1), finDone: t >= 30, finStroke: t >= 30 ? '#5BE3A8' : '#C9B6FB', finGlow: t >= 30 ? 1 : 0, finTitleO: t >= 30 ? 0 : 1, finStatO: t >= 30 ? 1 : 0, finStatY: t >= 30 ? '0px' : '12px' }; })(), ...(() => { const t = this.state.streakT ?? 3, step = 86; return { streakX: -Math.max(0, t - 5) * step + 'px', streakDays: Array.from({ length: 12 }, (_, i) => { const done = i < t, now = i === t; return { n: i + 1, link: i > 0, fill: i <= t ? '100%' : '0%', now, lock: !done && !now, flame: done || now, bg: done ? '#7B45F5' : now ? '#EEA53F' : '#B3B9C3', sh: done ? '0 8px 16px -8px rgba(91,47,208,.6)' : '0 0 0 3px #fff,0 8px 16px -8px rgba(37,16,63,.35)', sc: now ? '1.1' : '1', c1: now ? '#FFF6E6' : '#F8913A', nc: done || now ? '#25103F' : '#6B5F82' }; }) }; })(), ...(() => { const w = this.state.vw || (typeof window !== 'undefined' ? window.innerWidth : 1400); const wide = w >= 1000, mid = w >= 680; return { ctaCols: wide ? 'minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr)' : mid ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)', ctaPhotoRow: wide ? 'span 2' : 'auto', ctaPhotoCol: !wide && mid ? 'span 2' : 'auto', ctaWideCol: wide || mid ? 'span 2' : 'auto' }; })(), ...(() => { const n = this.reduced || this.state.seen05 && this.state.belN === undefined ? BELIEVERS.length : this.state.belN; const sums = [0, 50, 75, 125], tot = sums[Math.min(n, 3)]; if (this.state.seen05 && !this._belT && !this.reduced) { this._belT = 1; [700, 1500, 2300].forEach((ms, k) => setTimeout(() => this.setState({ belN: k + 1 }), ms)); } return { belTotal: '$' + tot, belPct: Math.round(tot / 2) + '%', belRing: (263.9 * (1 - tot / 200)).toFixed(1), belDoneO: n >= 3 ? 1 : 0, belDoneS: n >= 3 ? '1' : '.7', belStack: BELIEVERS.map((b, k) => ({ bg: "url(" + b.av + ")", o: k < n ? 1 : 0, s: k < n ? '1' : '.5' })), belFeed: BELIEVERS.map((b, k) => ({ ...b, bg: "url(" + b.av + ")", note: b.note.replace(/"/g, ''), o: k < n ? 1 : 0, y: k < n ? '0px' : '18px', s: k < n ? '1' : '.96' })) }; })(), belTiltRef: this.belTiltRef, belMove: (e) => { if (this.reduced) return; const el = this.belTiltRef.current; if (!el) return; const b = el.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5; el.style.transform = 'rotateY(' + (x * 10).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg)'; }, belLeave: () => { const el = this.belTiltRef.current; if (el) el.style.transform = 'none'; }, wheelItems: WHEEL_ITEMS, appOpen: this.state.appOpen, appShownO: this.state.appShown ? 1 : 0, appShownT: this.state.appShown ? 'none' : 'translateY(16px) scale(.97)', openAsk: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ askOpen: true, askShown: false, askSent: false }); setTimeout(() => this.setState({ askShown: true }), 30); }, closeAsk: () => { this.setState({ askShown: false }); setTimeout(() => this.setState({ askOpen: false }), 300); }, submitAsk: (e) => { e.preventDefault(); this.setState({ askSent: true }); }, askForm: !this.state.askSent, askDone: !!this.state.askSent, askOpen: !!this.state.askOpen, askShownO: this.state.askShown ? 1 : 0, askShownT: this.state.askShown ? 'none' : 'translateY(16px) scale(.97)',
-      openApp: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ appOpen: true, appShown: false }); setTimeout(() => this.setState({ appShown: true }), 30); }, closeApp: () => { this.setState({ appShown: false }); setTimeout(() => this.setState({ appOpen: false }), 300); }, stopProp: (e) => e.stopPropagation(), navItems: [['About','BetOnYou About V2.dc.html'],['AI Coach','BetOnYou AI Coach V2.dc.html'],['How It Works','BetOnYou How It Works V2 Stage.dc.html'],['Learn','BetOnYou Learn V2.dc.html'],['Contact','BetOnYou Contact V2.dc.html']].map(([label, href], i) => ({ label, href, fg: this.state.navHov === i ? '#7B45F5' : '#25103F', ty: this.state.navHov === i && !this.reduced ? '-100%' : '0%', on: () => this.setState({ navHov: i }), off: () => this.setState(s => s.navHov === i ? { navHov: -1 } : null), chars: [...label].map((ch, i) => ({ ch, d: this.reduced ? '0s' : (i * 0.01).toFixed(2) + 's' })) })), footRidge: (this.props.footer ?? 'Ridgeline') !== 'Dunes', footDune: (this.props.footer ?? 'Ridgeline') === 'Dunes', featTiltRef: this.featTiltRef, featMove: (e) => { if (this.reduced) return; const el = this.featTiltRef.current; if (!el) return; const b = el.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5; el.style.transform = 'translate(' + (x * 10).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px) rotateY(' + (x * 16).toFixed(2) + 'deg) rotateX(' + (-y * 12).toFixed(2) + 'deg)'; }, featLeave: () => { const el = this.featTiltRef.current; if (el) el.style.transform = 'none'; }, s03PhoneRef: this.s03PhoneRef, s03Move: (e) => { if (this.reduced) return; const el = this.s03PhoneRef.current; if (!el) return; const b = el.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5; el.style.transform = 'translate(' + (x * 10).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px) rotateY(' + (x * 16).toFixed(2) + 'deg) rotateX(' + (-y * 12).toFixed(2) + 'deg)'; }, s03Leave: () => { const el = this.s03PhoneRef.current; if (el) el.style.transform = 'none'; }, s05Ref: this.s05Ref, s06Ref: this.s06Ref,
+      openApp: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ appOpen: true, appShown: false }); setTimeout(() => this.setState({ appShown: true }), 30); }, closeApp: () => { this.setState({ appShown: false }); setTimeout(() => this.setState({ appOpen: false }), 300); }, stopProp: (e) => e.stopPropagation(), navItems: [['About','about.html'],['AI Coach','ai-coach.html'],['How It Works','how-it-works.html'],['Learn','learn.html'],['Contact','contact.html']].map(([label, href], i) => ({ label, href, fg: this.state.navHov === i ? '#7B45F5' : '#25103F', ty: this.state.navHov === i && !this.reduced ? '-100%' : '0%', on: () => this.setState({ navHov: i }), off: () => this.setState(s => s.navHov === i ? { navHov: -1 } : null), chars: [...label].map((ch, i) => ({ ch, d: this.reduced ? '0s' : (i * 0.01).toFixed(2) + 's' })) })), footRidge: (this.props.footer ?? 'Ridgeline') !== 'Dunes', footDune: (this.props.footer ?? 'Ridgeline') === 'Dunes', featTiltRef: this.featTiltRef, featMove: (e) => { if (this.reduced) return; const el = this.featTiltRef.current; if (!el) return; const b = el.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5; el.style.transform = 'translate(' + (x * 10).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px) rotateY(' + (x * 16).toFixed(2) + 'deg) rotateX(' + (-y * 12).toFixed(2) + 'deg)'; }, featLeave: () => { const el = this.featTiltRef.current; if (el) el.style.transform = 'none'; }, s03PhoneRef: this.s03PhoneRef, s03Move: (e) => { if (this.reduced) return; const el = this.s03PhoneRef.current; if (!el) return; const b = el.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5; el.style.transform = 'translate(' + (x * 10).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px) rotateY(' + (x * 16).toFixed(2) + 'deg) rotateX(' + (-y * 12).toFixed(2) + 'deg)'; }, s03Leave: () => { const el = this.s03PhoneRef.current; if (el) el.style.transform = 'none'; }, s05Ref: this.s05Ref, s06Ref: this.s06Ref,
       ...(() => {
         const R = this.reduced, s3 = this.state.seen03 || R, s5 = this.state.seen05 || R, s6 = this.state.seen06 || R, ci = this.state.cIdx;
         return {

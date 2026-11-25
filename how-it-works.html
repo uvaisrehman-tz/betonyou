@@ -84,7 +84,7 @@ a:hover{color:#5A2FD0}
 
 
 <header style="position:sticky;top:0;z-index:90;width:100%;padding:{{ hdrPad }};transition:padding .5s cubic-bezier(.22,1,.36,1)"><div style="width:100%;max-width:{{ hdrMax }};margin:0 auto;padding:{{ hdrInner }};position:relative;border-radius:{{ hdrRad }};background:{{ hdrBg }};-webkit-backdrop-filter:{{ hdrBlur }};backdrop-filter:{{ hdrBlur }};box-shadow:{{ hdrSh }};display:flex;align-items:center;justify-content:space-between;gap:24px;transition:max-width .6s cubic-bezier(.22,1,.36,1),padding .6s cubic-bezier(.22,1,.36,1),border-radius .6s cubic-bezier(.22,1,.36,1),background .5s ease,box-shadow .5s ease">
-  <a href="BetOnYou Landing V2.dc.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
+  <a href="index.html" aria-label="BetOnYou home" style="display:flex;align-items:center;gap:8px;min-height:44px;color:#25103F;flex-shrink:0">
     <span style="width:36px;height:36px;border-radius:10px;background:#7B45F5;display:flex;align-items:center;justify-content:center"><img src="boy-logo-mrey8juw.svg" alt="" style="width:22px;height:28px;display:block"></span>
     <span style="font-weight:600;font-size:24px;letter-spacing:-.045em;color:#25103F">BetOnYou</span>
   </a>
@@ -103,11 +103,11 @@ a:hover{color:#5A2FD0}
 
 <sc-if value="{{ mobOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;z-index:89;left:16px;right:16px;top:96px;max-height:calc(100dvh - 112px);overflow-y:auto;overscroll-behavior:contain;margin:0;background:#fff;border-radius:22px;box-shadow:0 0 0 1px #E6DEF4,0 24px 48px rgba(42,18,80,.1);padding:12px 20px 20px;display:flex;flex-direction:column">
-    <a href="BetOnYou About V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">About</a>
-    <a href="BetOnYou AI Coach V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
-    <a href="BetOnYou How It Works V2 Stage.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#7B45F5;border-bottom:1px solid #E6DEF4">How It Works</a>
-    <a href="BetOnYou Learn V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
-    <a href="BetOnYou Contact V2.dc.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
+    <a href="about.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">About</a>
+    <a href="ai-coach.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">AI Coach</a>
+    <a href="how-it-works.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#7B45F5;border-bottom:1px solid #E6DEF4">How It Works</a>
+    <a href="learn.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F;border-bottom:1px solid #E6DEF4">Learn</a>
+    <a href="contact.html" style="padding:14px 0;font-weight:500;font-size:18px;color:#25103F">Contact</a>
   </div>
 </sc-if>
 
@@ -396,7 +396,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const s = this.state.hdrS, small = this.state.w < (s ? 1180 : 1100);
-    const NAV = [['About', 'BetOnYou About V2.dc.html'], ['AI Coach', 'BetOnYou AI Coach V2.dc.html'], ['How It Works', 'BetOnYou How It Works V2 Stage.dc.html'], ['Learn', 'BetOnYou Learn V2.dc.html'], ['Contact', 'BetOnYou Contact V2.dc.html']];
+    const NAV = [['About', 'about.html'], ['AI Coach', 'ai-coach.html'], ['How It Works', 'how-it-works.html'], ['Learn', 'learn.html'], ['Contact', 'contact.html']];
     return {
       ...this.uniVals(), uniRef: this.uniRef,
       vidRef: this.vidRef, vidO: this.state.vReady ? 1 : 0, vErr: this.state.vErr && !this.state.vReady, shimAn: this.state.vReady || this.state.vErr || this.reduced ? 'none' : 'hwShim 1.6s linear infinite', vRetry: () => { const v = this.vidRef.current; this.setState({ vErr: false }); if (v) { this._armVid && this._armVid(); v.load(); const p = v.play(); p && p.catch && p.catch(() => {}); } }, shimO: this.state.vReady ? 0 : 1, vidLoaded: () => { if (!this.state.vReady) this.setState({ vReady: true }); }, vidEnter: () => this.setState({ vHover: true }), vidLeave: () => this.setState({ vHover: false }),

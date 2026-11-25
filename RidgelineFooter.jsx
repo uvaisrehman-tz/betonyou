@@ -101,7 +101,7 @@ function SocialIcon({ icon }) {
 }
 
 function RidgelineDitherFooter({
-  name = "BetOnYou", brandHref = "BetOnYou Landing V2.dc.html", logoSrc = "boy-logo-mrey8juw.svg",
+  name = "BetOnYou", brandHref = "index.html", logoSrc = "boy-logo-mrey8juw.svg",
   tagline = "Set personal challenges, prove your progress, and find people who believe in you.",
   columns = [], socials = [], copyright, preset = "betonyou", palette, seed = 11, ridges = 6, pixel = 2,
   mist = 0.8, drift = 1, radius = 130, interactive = true, maxWidth = "100%", fontFamily = SANS_STACK,
@@ -307,9 +307,9 @@ function BetOnYouFooter(props) {
   return (
     <RidgelineDitherFooter
       columns={[
-        { title: "Product", links: [{ label: "AI Coach", href: "BetOnYou AI Coach V2.dc.html" }, { label: "How it works", href: "BetOnYou How It Works V2 Stage.dc.html" }, { label: "Learn", href: "BetOnYou Learn V2.dc.html" }] },
-        { title: "Company", links: [{ label: "About", href: "BetOnYou About V2.dc.html" }, { label: "Contact", href: "BetOnYou Contact V2.dc.html" }] },
-        { title: "Legal", links: [{ label: "Privacy Policy", href: "Privacy Policy V2.dc.html" }, { label: "Terms of Service", href: "Terms of Service V2.dc.html" }, { label: "Cookie Policy", href: "Cookie Policy V2.dc.html" }] },
+        { title: "Product", links: [{ label: "AI Coach", href: "ai-coach.html" }, { label: "How it works", href: "how-it-works.html" }, { label: "Learn", href: "learn.html" }] },
+        { title: "Company", links: [{ label: "About", href: "about.html" }, { label: "Contact", href: "contact.html" }] },
+        { title: "Legal", links: [{ label: "Privacy Policy", href: "privacy-policy.html" }, { label: "Terms of Service", href: "terms-of-service.html" }, { label: "Cookie Policy", href: "cookie-policy.html" }] },
       ]}
       socials={[{ icon: "instagram", href: "#" }, { icon: "linkedin", href: "#" }, { icon: "x", href: "#" }]}
       {...props}
