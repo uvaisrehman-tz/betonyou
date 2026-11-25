@@ -1,0 +1,261 @@
+{
+  "v": 1,
+  "mode": "omelette",
+  "root": "project/",
+  "title": "BetOnYou website V2",
+  "entry": "BetOnYou Landing V2.dc.html",
+  "pages": [
+    {
+      "path": "BetOnYou Landing V2.dc.html",
+      "title": "BetOnYou Landing V2",
+      "kind": "page"
+    },
+    {
+      "path": "Cookie Policy V2.dc.html",
+      "title": "Cookie Policy V2",
+      "kind": "page"
+    },
+    {
+      "path": "Terms of Service V2.dc.html",
+      "title": "Terms of Service V2",
+      "kind": "page"
+    },
+    {
+      "path": "Privacy Policy V2.dc.html",
+      "title": "Privacy Policy V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Contact V2.dc.html",
+      "title": "BetOnYou Contact V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Article V2.dc.html",
+      "title": "BetOnYou Article V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Learn V2.dc.html",
+      "title": "BetOnYou Learn V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou How It Works V2.dc.html",
+      "title": "BetOnYou How It Works V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou How It Works V2 Stage.dc.html",
+      "title": "BetOnYou How It Works V2 Stage",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou AI Coach V2.dc.html",
+      "title": "BetOnYou AI Coach V2",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou About V2.dc.html",
+      "title": "BetOnYou About V2",
+      "kind": "page"
+    },
+    {
+      "path": "index.html",
+      "title": "BetOnYou",
+      "kind": "plain"
+    },
+    {
+      "path": "CommunityCTA.dc.html",
+      "title": "CommunityCTA",
+      "kind": "component"
+    },
+    {
+      "path": "BetOnYou Design Language.dc.html",
+      "title": "BetOnYou Design Language",
+      "kind": "page"
+    },
+    {
+      "path": "SectionHeader.dc.html",
+      "title": "SectionHeader",
+      "kind": "page"
+    },
+    {
+      "path": "RollButton.dc.html",
+      "title": "RollButton",
+      "kind": "component"
+    },
+    {
+      "path": "BetOnYou OG Card.dc.html",
+      "title": "BetOnYou OG Card",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Learn V2 (grid backup).dc.html",
+      "title": "BetOnYou Learn V2 (grid backup)",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Landing V3.dc.html",
+      "title": "BetOnYou Landing V3",
+      "kind": "page"
+    },
+    {
+      "path": "Phone Mockup Compare.dc.html",
+      "title": "Phone Mockup Compare",
+      "kind": "page"
+    },
+    {
+      "path": "SiteFooter.dc.html",
+      "title": "SiteFooter",
+      "kind": "component"
+    },
+    {
+      "path": "AmbientBackground.dc.html",
+      "title": "AmbientBackground",
+      "kind": "component"
+    },
+    {
+      "path": "SiteHeader.dc.html",
+      "title": "SiteHeader",
+      "kind": "component"
+    },
+    {
+      "path": "Terms of Service.dc.html",
+      "title": "Terms of Service",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Learn.dc.html",
+      "title": "BetOnYou Learn",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Hero.dc.html",
+      "title": "BetOnYou Hero",
+      "kind": "page"
+    },
+    {
+      "path": "Privacy Policy.dc.html",
+      "title": "Privacy Policy",
+      "kind": "page"
+    },
+    {
+      "path": "Cookie Policy.dc.html",
+      "title": "Cookie Policy",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Contact.dc.html",
+      "title": "BetOnYou Contact",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou About.dc.html",
+      "title": "BetOnYou About",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou Article.dc.html",
+      "title": "BetOnYou Article",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou How It Works.dc.html",
+      "title": "BetOnYou How It Works",
+      "kind": "page"
+    },
+    {
+      "path": "BetOnYou AI Coach.dc.html",
+      "title": "BetOnYou AI Coach",
+      "kind": "page"
+    }
+  ],
+  "migratorVersion": "artifact-migrator (claude-design-backend ed667f7ac9c1)",
+  "createdAt": "2026-11-12T04:13:00.366Z",
+  "source": {
+    "v": 1,
+    "app": "claude-design",
+    "url": "https://claude.ai/design/p/c4b88b65-5c7f-4796-b5b8-ef43a8b51e46",
+    "projectId": "c4b88b65-5c7f-4796-b5b8-ef43a8b51e46",
+    "exportedAt": "2026-11-12T04:13:00.366Z"
+  },
+  "report": {
+    "itemsVersion": 2,
+    "pages": {
+      "total": 28,
+      "ok": 12,
+      "partial": 16,
+      "notMigrated": 0
+    },
+    "items": [
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou About V2.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou AI Coach V2.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Article V2.dc.html",
+        "text": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&amp;h=630&amp;q=80&amp;auto=format&amp;fit=crop\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Article.dc.html",
+        "text": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&amp;q=80\nhttps://images.unsplash.com/photo-1579621970795-87facc2f976d?w=600&amp;q=80\nhttps://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&amp;q=80\nhttps://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&amp;q=80"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Contact V2.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou How It Works V2 Stage.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&q=80&auto=format&fit=crop\nhttps://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=160&q=70&auto=format&fit=crop\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou How It Works V2.dc.html",
+        "text": "https://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou How It Works.dc.html",
+        "text": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=900&amp;q=80\nhttps://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&amp;q=80\nhttps://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&amp;q=80\nhttps://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=900&amp;q=80\nhttps://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&amp;q=80\nand 5 more addresses"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Landing V2.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=1400&amp;q=72&amp;auto=format&amp;fit=crop\nhttps://images.unsplash.com/photo-1543269865-cbf427effbad?w=1400&amp;q=72&amp;auto=format&amp;fit=crop\nhttps://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&amp;q=72&amp;auto=format&amp;fit=crop\nhttps://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1800&amp;q=72&amp;auto=format&amp;fit=crop\nand 23 more addresses"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Landing V3.dc.html",
+        "text": "https://videos.pexels.com/video-files/5310858/5310858-hd_1280_720_50fps.mp4\nhttps://images.pexels.com/videos/5310858/pictures/preview-0.jpg\nhttps://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;margin=0&amp;color=EDE7FA&amp;bgcolor=1A1024&amp;qzone=0&amp;ecc=H&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;margin=0&amp;color=EDE7FA&amp;bgcolor=1A1024&amp;qzone=0&amp;ecc=H&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1\nhttps://images.pexels.com/videos/"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Learn V2 (grid backup).dc.html",
+        "text": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1400&q=80&auto=format&fit=crop\nhttps://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1200&q=80&auto=format&fit=crop\nhttps://cdn.21st.dev/assets/mirror/f5/f55dfc553c100e6da0ad95258a042b4100f0ff4bb03a5313d1f541984275e262.png&quot\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Learn V2.dc.html",
+        "text": "https://SITE-DOMAIN-PENDING/assets/og/betonyou-share.png\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fapps.apple.com%2Fus%2Fapp%2Fbetonyou-goal-accountability%2Fid6797482770\nhttps://api.qrserver.com/v1/create-qr-code/?size=280x280&amp;margin=8&amp;color=25103F&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dapp.betonyou.mobile%26pli%3D1"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "BetOnYou Learn.dc.html",
+        "text": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1600&amp;q=80\nhttps://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&amp;q=80\nhttps://images.unsplash.com/photo-1579621970795-87facc2f976d?w=400&amp;q=80\nhttps://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&amp;q=80\nhttps://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&amp;q=80\nand 23 more addresses"
+      }
+    ],
+    "truncated": 3,
+    "truncatedLeftOut": 0
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section id="community" ref="{{ rootRef }}" aria-labelledby="s07-title" style="position:relative;overflow:hidden;isolation:isolate;margin-top:{{ mt }};padding:clamp(80px,13vh,150px) clamp(20px,5vw,80px);background:#0B0614;color:#fff">
+  <div aria-hidden="true" style="position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse 45% 55% at 0% 0%,rgba(123,69,245,.38),rgba(123,69,245,0) 70%),radial-gradient(ellipse 40% 45% at 100% 0%,rgba(155,124,240,.22),rgba(155,124,240,0) 70%),radial-gradient(ellipse 55% 40% at 62% 100%,rgba(123,69,245,.26),rgba(123,69,245,0) 70%);pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;z-index:-1;left:20%;right:-10%;bottom:-6%;height:36%;background-image:radial-gradient(rgba(201,182,251,.9) .9px,transparent 1.3px);background-size:9px 9px;-webkit-mask-image:radial-gradient(ellipse 50% 90% at 55% 100%,#000 0%,rgba(0,0,0,.4) 50%,transparent 78%);mask-image:radial-gradient(ellipse 50% 90% at 55% 100%,#000 0%,rgba(0,0,0,.4) 50%,transparent 78%);opacity:.55;pointer-events:none"></div>
+  <div style="max-width:1480px;margin:0 auto;display:grid;grid-template-columns:{{ cmCols }};gap:clamp(40px,5vw,80px);align-items:center">
+    <div style="position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;align-items:flex-start">
+      <span style="font-size:13px;font-weight:600;letter-spacing:.16em;color:#C9B6FB">OUR COMMUNITY</span>
+      <h2 id="s07-title" style="margin:clamp(20px,3vh,28px) 0 0;max-width:620px;font-weight:500;font-size:clamp(34px,4.6vw,68px);line-height:1.04;letter-spacing:-.04em;color:#fff;text-wrap:balance">A community that <span style="color:#C9B6FB">turns intent into real progress.</span></h2>
+      <p style="margin:clamp(18px,2.6vh,26px) 0 0;max-width:520px;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#D9CFF0;text-wrap:pretty">Thousands of people are backing their goals, showing up every day, and proving what's possible — together.</p>
+      <div style="margin-top:clamp(28px,4.5vh,40px);display:flex;flex-wrap:wrap;gap:12px">
+        <dc-import name="RollButton" label="Get the app" href="#get-app" size="lg" on-click="{{ openApp }}" hint-size="190px,60px"></dc-import>
+        <dc-import name="RollButton" label="How it works" href="BetOnYou How It Works V2 Stage.dc.html" size="lg" tone="light" on-click="{{ exploreStories }}" hint-size="200px,60px"></dc-import>
+      </div>
+      <div style="margin-top:clamp(28px,4.5vh,40px);display:flex;align-items:center;gap:14px">
+        <div style="display:flex">
+          <sc-for list="{{ cmAvatars }}" as="a" hint-placeholder-count="4">
+            <img loading="lazy" decoding="async" src="{{ a.src }}" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #0B0614;margin-left:{{ a.ml }}">
+          </sc-for>
+        </div>
+        <span style="font-size:15px;color:#D9CFF0">Real goals from people like you</span>
+      </div>
+    </div>
+    <div style="position:relative;min-width:0">
+      <sc-if value="{{ cmFan }}" hint-placeholder-val="{{ true }}">
+        <svg aria-hidden="true" viewBox="0 0 1000 560" preserveAspectRatio="none" style="position:absolute;left:-4%;top:6%;width:106%;height:92%;overflow:visible;pointer-events:none;z-index:0">
+          <path d="M120 70 C 40 120, 60 230, 160 300 M 880 230 C 960 330, 900 460, 640 520 C 520 545, 400 550, 300 540" fill="none" stroke="#9B7CF0" stroke-width="2" stroke-linecap="round" opacity=".9" style="filter:drop-shadow(0 0 8px rgba(155,124,240,1))"></path>
+          <circle cx="122" cy="70" r="5" fill="#fff" style="filter:drop-shadow(0 0 8px #B9A1FA)"></circle>
+          <circle cx="760" cy="500" r="5" fill="#fff" style="filter:drop-shadow(0 0 8px #B9A1FA)"></circle>
+        </svg>
+      </sc-if>
+      <div role="list" aria-label="Community challenges" onMouseEnter="{{ cmPause }}" onMouseLeave="{{ cmResume }}" style="{{ cmTrack }}">
+        <sc-for list="{{ community }}" as="c" hint-placeholder-count="5">
+          <article role="listitem" aria-label="{{ c.aria }}" onClick="{{ c.pick }}" style="{{ c.pos }}">
+            <div style="position:relative;height:100%;border-radius:{{ c.rad }};overflow:hidden;box-shadow:{{ c.sh }};transition:box-shadow .8s ease;color:#25103F;cursor:pointer">
+              <div style="position:absolute;inset:0;background:{{ c.bg }}"></div>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,#C9B3FB 0%,#E4D9FD 50%,#F6F2FE 100%);opacity:{{ c.ctrO }};transition:opacity .8s ease"></div>
+              <img loading="lazy" decoding="async" src="{{ c.img }}" alt="{{ c.alt }}" style="position:absolute;object-fit:cover;object-position:50% 30%;display:block;background:#E6DEF4;left:{{ c.iL }};top:{{ c.iT }};width:{{ c.iW }};height:{{ c.iH }};border-radius:{{ c.iR }};transition:left .8s cubic-bezier(.65,0,.35,1),top .8s cubic-bezier(.65,0,.35,1),width .8s cubic-bezier(.65,0,.35,1),height .8s cubic-bezier(.65,0,.35,1),border-radius .8s cubic-bezier(.65,0,.35,1)">
+              <div style="position:absolute;left:0;right:0;top:31%;height:36%;background:linear-gradient(180deg,rgba(228,217,253,0),#E4D9FD 92%);opacity:{{ c.ctrO }};transition:opacity .8s ease;pointer-events:none"></div>
+              <div style="position:absolute;left:0;right:0;top:0;padding:{{ c.padT }};display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:{{ c.pillFs }};">
+                <span style="display:inline-flex;align-items:center;gap:.45em;height:2.3em;padding:0 .85em;border-radius:100px;background:{{ c.pillBg }};-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-weight:600;color:#25103F;white-space:nowrap;max-width:100%;overflow:hidden;transition:background .8s ease"><svg viewBox="0 0 16 16" aria-hidden="true" style="width:1.1em;height:1.1em;flex:none"><path d="{{ c.icon }}" fill="none" stroke="#5B2EC4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ c.cat }}</span>
+                <span style="display:inline-flex;align-items:center;height:2.3em;padding:0 .95em;border-radius:100px;background:#7B45F5;color:#fff;font-weight:600;white-space:nowrap;flex:none;display:{{ c.dayD }};opacity:{{ c.ctrO }};transition:opacity .6s ease">{{ c.dayTxt }}</span>
+              </div>
+              <div style="position:absolute;left:0;right:0;bottom:0;padding:{{ c.padB }};">
+                <p style="margin:0;font-weight:500;font-size:{{ c.fs }};line-height:1.1;letter-spacing:-.025em;color:#25103F;text-wrap:balance;">{{ c.promise }}</p>
+                <div style="margin-top:{{ c.gap }};display:flex;align-items:center;gap:10px;"><div style="flex:1;height:{{ c.barH }};border-radius:12px;background:rgba(37,16,63,.12);overflow:hidden;"><div style="width:{{ c.pct }};height:100%;border-radius:12px;background:{{ c.barC }};transition:background .8s ease"></div></div><span style="font-size:{{ c.pctFs }};font-weight:600;font-variant-numeric:tabular-nums;">{{ c.pct }}</span></div>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <p style="position:relative;margin:clamp(14px,2vh,22px) 0 0;text-align:center;font-size:13px;color:#A898C8">Sample community stories</p>
+    </div>
+  </div>
+  <div
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;marginTop&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;0px&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onGetApp&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e)=>void&quot;}}">
+const PICK = [{"cat":"Study","img":"assets/boy/w/card-4.webp","alt":"Boy studying at a desk with notebooks","day":18,"total":40},{"cat":"Habits","img":"assets/boy/s2-hero.webp","alt":"Man on a sofa looking at his phone","day":15,"total":30},{"cat":"Reading","img":"alexandra-fuller-wkgv7i2vtzm-unsplash-mrez6p84.webp","alt":"Woman reading a book in a bright room","day":41,"total":90},{"cat":"Learning","img":"christian-velitchkov-mxz64b8-3h0-unsplas-mrez9nja.webp","alt":"Man working on a laptop","day":26,"total":60},{"cat":"Music","img":"gabriel-rodrigues-p6v49ldtwa4-unsplash-mrez7ylb.webp","alt":"Man practising acoustic guitar","day":34,"total":60}];
+const COMMUNITY = [
+  ['Study', "I'll do math practice every day.", 'linear-gradient(180deg,#FBE3D3,#FFF6EC)', 'M2.500 3.500h4.500a1 1 0 0 1 1 1v8.500a1.500 1.500 0 0 0-1.500-1.500H2.500Zm11 0H9a1 1 0 0 0-1 1v8.500a1.500 1.500 0 0 1 1.500-1.500h4Z'],
+  ['Habits', 'No phone after 10 pm. Promise.', 'linear-gradient(180deg,#CDEFE2,#F0FAF5)', 'M3 13c0-5 3.500-8.500 10-10-1 6.500-4.500 10-9.500 10M3 13l4.500-4.500'],
+  ['Reading', "I'll read every night before bed.", '', 'M8 4.500C6.500 3.500 4.500 3 2 3v9.500c2.500 0 4.500.5 6 1.500m0-9.500C9.500 3.500 11.500 3 14 3v9.500c-2.500 0-4.500.5-6 1.500m0-9.500V14'],
+  ['Learning', "I'll ship my side project by spring.", 'linear-gradient(180deg,#D9E4FC,#F2F0FE)', 'M3 4h10v6.500H3ZM1.500 12.500h13'],
+  ['Music', "I'll learn ten songs on guitar.", 'linear-gradient(180deg,#F7E2D0,#FFF8EE)', 'M6 12V3.500l7-1.500V10.500M6 12a2 2 0 1 1-2-2 2 2 0 0 1 2 2Zm7-1.500a2 2 0 1 1-2-2 2 2 0 0 1 2 2Z']
+];
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, cmAct: 2 };
+  componentDidMount() {
+    this._rs = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this._rs);
+    if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) this._cmT = setInterval(() => { if (this._cmHold || document.hidden || this.state.w < 1180) return; const el = this._root && this._root.current; if (el) { const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; } this.setState(s => ({ cmAct: ((s.cmAct ?? 2) + 1) % 5 })); }, 3600);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._rs); clearInterval(this._cmT); }
+  _root = React.createRef();
+  renderVals() {
+    return {
+      rootRef: this._root, mt: this.props.marginTop ?? '0px',
+      community: (() => { const mob = (this.state.w || 1200) < 1180, act = this.state.cmAct ?? 2, E = 'cubic-bezier(.65,0,.35,1)'; const SL = { '-2': [0.5,27,18.5,54,-8,1], '-1': [14,18,19.5,62,-4,3], '0': [31,0,38,100,0,6], '1': [66.5,20,19.5,62,4,3], '2': [81,29,18.5,54,8,1] }; return COMMUNITY.map(([cat, promise, bg, icon], i) => { const s = PICK.find(x => x.cat === cat), off = ((i - act + 7) % 5) - 2, P = SL[off], ctr = mob || off === 0, pct = Math.round(s.day / s.total * 100) + '%'; return { cat, promise, bg: bg || 'linear-gradient(180deg,#D9CCFB,#F3EEFE)', icon, img: s.img, alt: s.alt, dayTxt: 'Day ' + s.day, dayD: ctr ? 'inline-flex' : 'none', pct, ctrO: ctr ? 1 : 0, rad: ctr ? 'clamp(24px,8cqw,36px)' : 'clamp(18px,11cqw,30px)', sh: ctr ? '0 0 0 1.5px rgba(214,198,255,.95),0 0 60px -4px rgba(155,124,240,.6),0 40px 80px -30px rgba(0,0,0,.7)' : 'inset 0 0 0 1px rgba(255,255,255,.7),0 30px 60px -28px rgba(0,0,0,.65)', iL: ctr ? '0%' : '18%', iT: ctr ? '0%' : '15%', iW: ctr ? '100%' : '64%', iH: ctr ? '65.6%' : (64 * P[2] * 1.8 / P[3]).toFixed(2) + '%', iR: ctr ? '0%' : '50%', padT: ctr ? '6cqw' : '9cqw', padB: ctr ? '0 7cqw 7cqw' : '0 9cqw 10cqw', pillFs: ctr ? 'clamp(12px,4.2cqw,17px)' : 'clamp(10px,7.4cqw,15px)', pillBg: ctr ? 'rgba(255,255,255,.6)' : 'rgba(37,16,63,.08)', fs: ctr ? 'clamp(20px,8.4cqw,36px)' : 'clamp(13px,10.5cqw,22px)', gap: ctr ? '6cqw' : '8cqw', barH: ctr ? 'clamp(8px,2.6cqw,12px)' : '5px', barC: ctr ? '#7B45F5' : '#25103F', pctFs: ctr ? 'clamp(14px,4.6cqw,20px)' : 'clamp(11px,6.6cqw,13px)', aria: cat + ': ' + promise + ' Day ' + s.day + ', ' + pct + ' complete. Sample story.' + (ctr ? '' : ' Select to bring to the front.'), pick: () => { if (!mob) this.setState({ cmAct: i }); }, pos: mob ? 'flex:0 0 min(270px,74vw);height:420px;scroll-snap-align:center;container-type:inline-size' : 'position:absolute;left:' + P[0] + '%;top:' + P[1] + '%;width:' + P[2] + '%;height:' + P[3] + '%;z-index:' + P[5] + ';transform:perspective(1400px) rotateY(' + (-off * 7) + 'deg) rotate(' + P[4] + 'deg);transform-origin:50% 100%;container-type:inline-size;transition:left .8s ' + E + ',top .8s ' + E + ',width .8s ' + E + ',height .8s ' + E + ',transform .8s ' + E }; }).sort((p, q) => mob ? (q.cat === 'Reading') - (p.cat === 'Reading') : 0); })(),
+      cmFan: (this.state.w || 1200) >= 1180,
+          cmTrack: (this.state.w || 1200) < 1180 ? 'display:flex;align-items:center;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 16px;margin:0 calc(-1 * clamp(20px,5vw,80px));padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px);scrollbar-width:none;-webkit-overflow-scrolling:touch' : 'position:relative;z-index:1;width:100%;aspect-ratio:1.8',
+          cmCols: (this.state.w || 1200) < 1180 ? 'minmax(0,1fr)' : 'minmax(0,.86fr) minmax(0,1.14fr)',
+          cmAvatars: ['Reading', 'Habits', 'Study', 'Music'].map((c, i) => ({ src: PICK.find(x => x.cat === c).img, ml: i ? '-10px' : '0' })),
+      cmPause: () => { this._cmHold = true; }, cmResume: () => { this._cmHold = false; },
+      openApp: (e) => { if (this.props.onGetApp) { e && e.preventDefault && e.preventDefault(); this.props.onGetApp(e); } },
+      exploreStories: () => {}
+    };
+  }
+}
+</script>
+</body>
+</html>

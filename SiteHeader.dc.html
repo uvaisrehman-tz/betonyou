@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&amp;family=Geist:wght@600&amp;display=swap" rel="stylesheet">
+<style>
+/* Shared site header — single source of truth for every page. The only
+   per-page difference is the `active` prop. Logo/branding never varies
+   by page — no page should override any of these rules. */
+.navwrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(980px,calc(100% - 32px));z-index:100;transition:top .35s cubic-bezier(.22,1,.36,1)}
+.navwrap.scrolled{top:10px}
+.nav{--accent:#9755e2;--accent-d:#8a48d6;position:relative;height:40px;border-radius:70px;background:#1A1A1A;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(71,71,71,.5);display:flex;align-items:center;justify-content:space-between;padding:0 4px 0 16px;transition:height .35s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),background .3s;font-family:Geist,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.navwrap.scrolled .nav{height:36px;background:#141414;box-shadow:inset 0 0 0 1px rgba(71,71,71,.5),0 12px 30px rgba(0,0,0,.35)}
+.nav:hover{box-shadow:inset 0 0 0 1px rgba(120,120,120,.6),0 10px 30px rgba(0,0,0,.28)}
+.nav a{text-decoration:none}
+.brand{display:flex;align-items:center;gap:4px;color:#fff !important;flex-shrink:0;cursor:pointer}
+.brand img{width:15px;height:21px;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.brand:hover img{transform:rotate(-8deg) scale(1.12)}
+.brand span{font-weight:600;font-size:17px;letter-spacing:-.04em;transition:opacity .25s;color:#fff !important}
+.brand:hover span{opacity:.85}
+
+.navlinks{display:flex;align-items:center;flex:1;justify-content:center}
+.navcta{flex-shrink:0;display:flex;align-items:center;gap:8px}
+.seg{position:relative;display:flex;align-items:center;padding:3px;border-radius:100px}
+.seg-ind{position:absolute;top:3px;bottom:3px;left:0;width:0;border-radius:100px;background:#585858;opacity:0;z-index:0;pointer-events:none;transform:translateX(0);transition:transform .32s cubic-bezier(.4,0,.2,1),width .32s cubic-bezier(.4,0,.2,1),opacity .25s ease}
+.seg .seg-item{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 18px;border-radius:100px;background:transparent;color:#fff !important;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;letter-spacing:-.02em;white-space:nowrap;box-shadow:inset 0 0 0 1px transparent;transition:box-shadow .2s ease;cursor:pointer}
+.seg .seg-item:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+.seg .seg-item.active,.seg .seg-item.active:hover{box-shadow:none}
+.seg .seg-item:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+.navcta a.loginbtn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 16px;border-radius:100px;background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);color:#fff !important;font-family:"DM Sans",sans-serif;font-weight:600;font-size:14px;letter-spacing:-.02em;transition:box-shadow .25s,transform .25s,background .25s}
+.navcta a.loginbtn:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);background:rgba(255,255,255,.06);transform:translateY(-1px)}
+.navcta a.getst{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 18px;border-radius:100px;background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#fff !important;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;letter-spacing:-.02em;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),background .3s}
+.navcta a.getst:hover{transform:scale(1.04);box-shadow:0 8px 22px rgba(151,85,226,.5)}
+.navcta a.getst:active{transform:scale(.98)}
+.navcta a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* Mobile trigger */
+.navburger{display:none;width:32px;height:32px;border-radius:50%;background:transparent;border:none;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:#fff}
+.navburger svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.navburger:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* Mobile slide-in panel */
+.navpanel{position:fixed;inset:0;z-index:99;visibility:hidden}
+.navpanel .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .35s ease}
+.navpanel .sheet{position:absolute;top:0;right:0;bottom:0;width:min(340px,86vw);background:#141414;box-shadow:-20px 0 60px rgba(0,0,0,.4);transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:20px 24px 32px}
+.navpanel.open{visibility:visible}
+.navpanel.open .backdrop{opacity:1}
+.navpanel.open .sheet{transform:translateX(0)}
+.navpanel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.navpanel-close{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:none;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer}
+.navpanel-close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.navpanel-close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.navpanel-links{display:flex;flex-direction:column;gap:2px;margin-bottom:auto}
+.navpanel-links a{display:block;padding:16px 4px;font-family:Geist;font-weight:500;font-size:22px;letter-spacing:-.03em;color:rgba(255,255,255,.75) !important;border-bottom:1px solid rgba(255,255,255,.08);transition:color .25s}
+.navpanel-links a.active{color:#fff !important}
+.navpanel-links a:hover,.navpanel-links a:focus-visible{color:#fff !important}
+.navpanel-ctas{display:flex;flex-direction:column;gap:12px;padding-top:24px}
+.navpanel-ctas a{display:flex;align-items:center;justify-content:center;height:52px;border-radius:100px;font-family:"DM Sans",sans-serif;font-weight:600;font-size:16px;letter-spacing:-.02em}
+.navpanel-ctas a.loginbtn{background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);color:#fff !important}
+.navpanel-ctas a.getst{background:linear-gradient(135deg,var(--accent, #9755e2),var(--accent-d, #8a48d6));color:#fff !important}
+.navpanel-top .brand,.navpanel-top .brand span{color:#fff !important}
+
+@media (max-width:1023px){
+  .navwrap{width:calc(100% - 24px)}
+  .nav{padding:0 6px 0 16px}
+  .seg .seg-item{padding:0 13px;font-size:14px}
+  .navcta a.loginbtn,.navcta a.getst{font-size:13px;padding:0 13px}
+}
+@media (max-width:767px){
+  .navlinks,.navcta{display:none}
+  .navburger{display:flex}
+}
+
+</style>
+</helmet>
+<div class="navwrap" id="navwrap">
+<nav class="nav" aria-label="Primary">
+<a class="brand" href="BetOnYou Hero.dc.html"><img src="boy-logo-mrey8juw.svg" alt="BetOnYou"><span>BetOnYou</span></a>
+<div class="navlinks">
+<div class="seg" id="seg" role="navigation">
+<span class="seg-ind"></span>
+<a class="seg-item" data-key="about" href="BetOnYou About.dc.html">About</a>
+<a class="seg-item" data-key="aicoach" href="BetOnYou AI Coach.dc.html">AI Coach</a>
+<a class="seg-item" data-key="howitworks" href="BetOnYou How It Works.dc.html">How It Works</a>
+<a class="seg-item" data-key="learn" href="BetOnYou Learn.dc.html">Learn</a>
+<a class="seg-item" data-key="contact" href="BetOnYou Contact.dc.html">Contact</a>
+</div>
+</div>
+<div class="navcta">
+<a class="loginbtn" href="#">Log in</a>
+<a class="getst" href="BetOnYou Hero.dc.html">Get started</a>
+</div>
+<button class="navburger" id="navburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navpanel">
+<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</nav>
+</div>
+
+<div class="navpanel" id="navpanel" role="dialog" aria-modal="true" aria-label="Site menu">
+<div class="backdrop" id="navbackdrop"></div>
+<div class="sheet">
+<div class="navpanel-top">
+<a class="brand" href="BetOnYou Hero.dc.html"><img src="boy-logo-mrey8juw.svg" alt="BetOnYou"><span>BetOnYou</span></a>
+<button class="navpanel-close" id="navclose" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<nav class="navpanel-links" id="navpanel-links" aria-label="Mobile">
+<a data-key="about" href="BetOnYou About.dc.html">About</a>
+<a data-key="aicoach" href="BetOnYou AI Coach.dc.html">AI Coach</a>
+<a data-key="howitworks" href="BetOnYou How It Works.dc.html">How It Works</a>
+<a data-key="learn" href="BetOnYou Learn.dc.html">Learn</a>
+<a data-key="contact" href="BetOnYou Contact.dc.html">Contact</a>
+</nav>
+<div class="navpanel-ctas">
+<a class="loginbtn" href="#">Log in</a>
+<a class="getst" href="BetOnYou Hero.dc.html">Get started</a>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;80px&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;aicoach&quot;,&quot;howitworks&quot;,&quot;learn&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const act = this.props.active || "home";
+    document.querySelectorAll('[data-key="' + act + '"]').forEach(el => {
+      el.classList.add("active");
+      el.setAttribute("aria-current", "page");
+    });
+    this._initSeg();
+    this._initScroll();
+    this._initMobileMenu();
+  }
+  componentWillUnmount() {
+    if (this._segCleanup) this._segCleanup();
+    if (this._scrollCleanup) this._scrollCleanup();
+    if (this._menuCleanup) this._menuCleanup();
+    document.body.style.overflow = "";
+  }
+
+  // Segmented nav control: sliding indicator to the active tab.
+  _initSeg() {
+    const seg = document.getElementById("seg");
+    if (!seg) return;
+    const ind = seg.querySelector(".seg-ind");
+    const items = Array.from(seg.querySelectorAll(".seg-item"));
+    const place = (el, anim) => {
+      if (!el) { ind.style.opacity = "0"; return; }
+      if (!anim) ind.style.transition = "none";
+      ind.style.opacity = "1";
+      ind.style.width = el.offsetWidth + "px";
+      ind.style.transform = "translateX(" + el.offsetLeft + "px)";
+      if (!anim) { void ind.offsetWidth; ind.style.transition = ""; }
+    };
+    const reposition = () => place(items.find(i => i.classList.contains("active")), false);
+    reposition();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reposition);
+    this._segRO = ("ResizeObserver" in window) ? new ResizeObserver(reposition) : null;
+    if (this._segRO) this._segRO.observe(seg);
+    const onClick = (e) => {
+      const it = e.target.closest(".seg-item");
+      if (!it) return;
+      e.preventDefault();
+      if (!it.classList.contains("active")) {
+        items.forEach(x => { x.classList.remove("active"); x.removeAttribute("aria-current"); });
+        it.classList.add("active");
+        it.setAttribute("aria-current", "page");
+        place(it, true);
+      }
+      const href = it.getAttribute("href");
+      setTimeout(() => { window.location.href = href; }, 300);
+    };
+    seg.addEventListener("click", onClick);
+    this._segCleanup = () => { if (this._segRO) this._segRO.disconnect(); seg.removeEventListener("click", onClick); };
+  }
+
+  // Shrinks + darkens the floating pill after a small scroll.
+  _initScroll() {
+    const wrap = document.getElementById("navwrap");
+    if (!wrap) return;
+    const onScroll = () => wrap.classList.toggle("scrolled", window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    this._scrollCleanup = () => window.removeEventListener("scroll", onScroll);
+  }
+
+  // Mobile slide-in menu: open/close, ESC, backdrop click, focus trap, scroll lock.
+  _initMobileMenu() {
+    const burger = document.getElementById("navburger");
+    const panel = document.getElementById("navpanel");
+    const closeBtn = document.getElementById("navclose");
+    const backdrop = document.getElementById("navbackdrop");
+    if (!burger || !panel) return;
+    let lastFocus = null;
+
+    const focusables = () => Array.from(panel.querySelectorAll('a[href], button')).filter(el => el.offsetParent !== null);
+
+    const open = () => {
+      lastFocus = document.activeElement;
+      panel.classList.add("open");
+      burger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      const f = focusables();
+      if (f.length) f[0].focus();
+    };
+    const close = () => {
+      panel.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      if (lastFocus) lastFocus.focus();
+    };
+
+    const onBurger = () => open();
+    const onClose = () => close();
+    const onBackdrop = () => close();
+    const onKey = (e) => {
+      if (!panel.classList.contains("open")) return;
+      if (e.key === "Escape") { close(); return; }
+      if (e.key === "Tab") {
+        const f = focusables();
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    const onLinkClick = () => close();
+
+    burger.addEventListener("click", onBurger);
+    closeBtn.addEventListener("click", onClose);
+    backdrop.addEventListener("click", onBackdrop);
+    document.addEventListener("keydown", onKey);
+    const links = Array.from(panel.querySelectorAll("a"));
+    links.forEach(a => a.addEventListener("click", onLinkClick));
+
+    this._menuCleanup = () => {
+      burger.removeEventListener("click", onBurger);
+      closeBtn.removeEventListener("click", onClose);
+      backdrop.removeEventListener("click", onBackdrop);
+      document.removeEventListener("keydown", onKey);
+      links.forEach(a => a.removeEventListener("click", onLinkClick));
+    };
+  }
+}
+</script>
+</body>
+</html>
