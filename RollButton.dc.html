@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<a href="{{ href }}" aria-label="{{ label }}" onClick="{{ onClick }}" onMouseEnter="{{ on }}" onMouseLeave="{{ off }}" onFocus="{{ on }}" onBlur="{{ off }}" style="position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:{{ w }};height:{{ h }};padding:0 {{ px }};border-radius:{{ rad }};color:{{ fg }};font-weight:600;font-size:{{ fs }};letter-spacing:-.01em;text-decoration:none;outline:none;-webkit-tap-highlight-color:transparent" style-focus="box-shadow:0 0 0 3px rgba(123,69,245,.35)">
+  <span aria-hidden="true" style="position:absolute;inset:{{ inset }};border-radius:{{ rad }};border:{{ bw }} solid {{ bc }};background-color:{{ bg }};box-shadow:{{ shadow }};transition:inset .6s cubic-bezier(.65,.05,.36,1),background-color .6s cubic-bezier(.65,.05,.36,1),border-color .6s cubic-bezier(.65,.05,.36,1),border-width .6s cubic-bezier(.65,.05,.36,1)"></span>
+  <span aria-hidden="true" style="position:relative;z-index:1;display:flex;overflow:hidden;line-height:1.3;white-space:pre">
+    <sc-for list="{{ chars }}" as="c" hint-placeholder-count="0">
+      <span style="display:inline-block;white-space:pre;transform:translateY({{ ty }});text-shadow:0 1.3em currentColor;transition:transform .6s cubic-bezier(.65,.05,.36,1) {{ c.d }}">{{ c.ch }}</span>
+    </sc-for>
+  </span>
+</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:320,&quot;height&quot;:120},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Download the app&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;href&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;size&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;sm&quot;,&quot;md&quot;,&quot;lg&quot;],&quot;default&quot;:&quot;md&quot;,&quot;tsType&quot;:&quot;'sm'|'md'|'lg'&quot;},&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;primary&quot;,&quot;light&quot;,&quot;outline&quot;],&quot;default&quot;:&quot;primary&quot;,&quot;tsType&quot;:&quot;'primary'|'light'|'outline'&quot;},&quot;full&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;onClick&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}">
+class Component extends DCLogic {
+  state = { hov: false };
+  componentDidMount() { this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  renderVals() {
+    const p = this.props, hov = this.state.hov && !this.reduced;
+    const size = p.size || 'md', tone = p.tone || 'primary';
+    const S = { sm: ['44px', '20px', '15px', '14px'], md: ['52px', '26px', '16px', '16px'], lg: ['60px', '36px', '19px', '18px'] }[size] || ['52px', '26px', '16px', '16px'];
+    const T = tone === 'outline'
+      ? { bg: 'rgba(123,69,245,0)', hbg: '#F1ECFD', fg: '#25103F', bc: '#7B45F5', base: '#CDBDFC', flat: true }
+      : tone === 'light'
+      ? { bg: '#FFFFFF', hbg: '#F1ECFD', fg: '#25103F', bc: 'rgba(255,255,255,.3)' }
+      : { bg: '#7B45F5', hbg: '#9569F7', fg: '#FFFFFF', bc: 'rgba(250,248,254,.3)' };
+    const label = p.label || 'Get the app';
+    return {
+      href: p.href || '#', label, onClick: p.onClick,
+      on: () => this.setState({ hov: true }), off: () => this.setState({ hov: false }),
+      w: p.full ? '100%' : 'auto', h: S[0], px: S[1], fs: S[2], rad: S[3], fg: T.fg,
+      inset: T.flat ? '0px' : hov ? '2px' : '0px', bw: T.flat ? '1.5px' : hov ? '2px' : '0px', bc: T.flat ? (hov ? T.bc : T.base) : hov ? T.bc : 'transparent', bg: hov ? T.hbg : T.bg,
+      shadow: T.flat ? 'none' : '0 8px 24px rgba(37,16,63,.16),inset 0 0 .5rem rgba(255,255,255,.4)',
+      ty: hov ? '-100%' : '0%',
+      chars: [...label].map((ch, i) => ({ ch, d: (i * 0.01).toFixed(2) + 's' }))
+    };
+  }
+}
+</script>
+</body>
+</html>
